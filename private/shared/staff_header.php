@@ -1,14 +1,12 @@
-<?php 
-  if (!isset($page_title)) { //isset determina si una variable esta definida y no es null
-    $page_title = 'Staff Area';
-  }
+<?php
+  if(!isset($page_title)) { $page_title = 'Staff Area'; }
 ?>
 
 <!doctype html>
 
 <html lang="en">
   <head>
-    <title>GBI - <?php echo $page_title; ?> </title>
+    <title>GBI - <?php echo $page_title; ?></title>
     <meta charset="utf-8">
     <link rel="stylesheet" media="all" href="../stylesheets/staff.css" />
   </head>
@@ -20,6 +18,6 @@
 
     <navigation>
       <ul>
-        <li><a href="index.php">Menu</a></li>
+        <li><a href="<?php echo 'index.php'; ?>">Menu</a></li>
       </ul>
     </navigation>
