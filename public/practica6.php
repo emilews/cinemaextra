@@ -17,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-            
+            <!-- Dibujamos dinamicamente el cuerpo de la tabla-->
            <?php for($i = 0 ; $i <= count($array_numeros) - 1; $i++){ ?>
                 <?php echo '<tr style="text-align:center;">'; ?>
                     <?php echo '<td name='.$i.'>'.$array_numeros[$i].'</td>'; ?>
