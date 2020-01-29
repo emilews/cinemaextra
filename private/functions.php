@@ -6,4 +6,8 @@
         }
         return WWW_ROOT . $script_path;
     }
+
+    function u($parametros){
+        return urlencode($parametros);
+    }
 ?>
