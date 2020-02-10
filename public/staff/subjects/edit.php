@@ -13,7 +13,7 @@ if($test == '404') {
   redirect_to(url_for('/staff/subjects/index.php'));
 } 
 ?>
-<?php $page_title = 'Create Subject'; ?>
+<?php $page_title = 'Edit Subject'; ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
 <div id="content">
@@ -21,9 +21,9 @@ if($test == '404') {
   <a class="back-link" href="<?php echo url_for('/staff/subjects/index.php'); ?>">&laquo; Back to List</a>
 
   <div class="subject new">
-    <h1>Create Subject</h1>
+    <h1>Edit Subject</h1>
 
-    <form action="create.php" method="post">
+    <form action="" method="post">
       <dl>
         <dt>Menu Name</dt>
         <dd><input type="text" name="menu_name" value="" /></dd>
