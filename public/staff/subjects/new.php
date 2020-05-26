@@ -1,19 +1,18 @@
 <?php
+//($errores!=true)? url_for('/staff/subjects/create.php'): url_for('/staff/subjects/new.php');
+//ERRORES ESTA VACIO
+  require_once('../../../private/initialize.php');
 
-require_once('../../../private/initialize.php');
+  $subject_set = find_all_subjects();
+  $subject_count = mysqli_num_rows($subject_set);
+  mysqli_free_result($subject_set);
 
-$test = $_GET['test'] ?? '';
-
-if($test == '404') {
-  error_404();
-} elseif($test == '500') {
-  // error_500();
-  redirect_to(url_for('/staff/subjects/index.php'));
-} elseif($test == 'redirect') {
-  redirect_to(url_for('/staff/subjects/index.php'));
-} 
+  $subject = [];
+  $subject['position'] = $subject_count;
+  
 ?>
-<?php $page_title = 'Create Subject'; ?>
+
+<?php $page_title = 'Agregar pelicula'; ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
 <div id="content">
@@ -21,30 +20,42 @@ if($test == '404') {
   <a class="back-link" href="<?php echo url_for('/staff/subjects/index.php'); ?>">&laquo; Back to List</a>
 
   <div class="subject new">
-    <h1>Create Subject</h1>
+    <h1>Agregar Pelicula</h1>
 
-    <form action="create.php" method="post">
-      <dl>
-        <dt>Menu Name</dt>
-        <dd><input type="text" name="menu_name" value="" /></dd>
+    <form action="<?php echo url_for('/staff/subjects/create.php');?>" method="post">
+    <dl>
+        <dt>Nombre de director</dt>
+        <dd><input type="text" name="director" value="" required /></dd>
       </dl>
       <dl>
-        <dt>Position</dt>
-        <dd>
-          <select name="position">
-            <option value="1">1</option>
-          </select>
-        </dd>
+        <dt>Nombre de pelicula</dt>
+        <dd><input type="text" name="nombre_pelicula" value="" required /></dd>
       </dl>
       <dl>
-        <dt>Visible</dt>
-        <dd>
-          <input type="hidden" name="visible" value="0" />
-          <input type="checkbox" name="visible" value="1" />
-        </dd>
+        <dt>Duracion</dt>
+        <dd><input type="text" name="duracion" value="" required /></dd>
       </dl>
+      
+	  <dl>
+        <dt>Horarios</dt>
+        <dd><input type="text" name="horarios" value="" required /></dd>
+      </dl>
+      <dl>
+        <dt>Genero</dt>
+        <dd><input type="text" name="genero" value="" required /></dd>
+      </dl>
+      <dl>
+      <dl>
+        <dt>Descripcion</dt>
+        <dd><input type="text" name="descripcion" value="" required /></dd>
+      </dl>
+	  <dl>
+        <dt>Imagen</dt>
+        <dd><input type="file" name="imagen" required /></dd>
+      </dl>
+      <dl>
       <div id="operations">
-        <input type="submit" value="Create Subject" />
+        <input type="submit" value="Create Movie" />
       </div>
     </form>
 

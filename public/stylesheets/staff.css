@@ -4,19 +4,11 @@ html {
 }
 
 body {
-  height: 980px;
+  height: 700px;
   width: 100%;
   margin: 0;
   padding: 0;
-}
-
-header {
-  width: 980px;
-  height: 40px;
-  margin: 0 0 10px 0;
-  padding: 0;
-  background: #0055DD;
-  color: white;
+  background-color: #F74D4D;
 }
 
 header h1 {
@@ -27,38 +19,24 @@ header h1 {
   text-align: center;
 }
 
-navigation {
-  width: 980px;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
-
-navigation ul {
-  width: 980px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-navigation ul li {
-  display: inline;
-  margin-right: 1em;
-}
-
 #content {
-  width: 920px;
   min-height: 500px;
-  padding: 0 30px;
+  padding: 0 30px 0 30px;
+
+}
+
+#navcontent{
+  min-width: 300px;
+  margin-bottom: 0px;
 }
 
 footer {
-  width: 940px;
-  height: 20px;
+  height: 45px;
   margin: 0 0 10px 0;
   padding: 10px 20px;
-  background: #0055DD;
-  color: white;
+  background: #D51111;
+  color: #fff;
+  text-align:center;
 }
 
 /* Actions */
@@ -79,15 +57,43 @@ table.list {
   width: 100%;
 }
 
+
+
 table.list tr td {
-  border: 1px solid #999999;
+  border: 1px solid #B51E1E;
 }
 
+
 table.list tr th {
-  border: 1px solid #0055DD;
-  background: #0055DD;
+  border: 2px solid #B51E1E;
+  background: #D51111;
   color: white;
   text-align: left;
+}
+
+.tdimg{
+  width: 200px;
+}
+
+.listcontent {
+  padding: 10px 50px 10px 50px;
+}
+
+.logincontent {
+  margin: 0 4x00px 0 400px;
+}
+
+.regcontent{
+  margin: 0 4x00px 0 400px;
+}
+
+.moviescontent{
+  min-width: 761;
+  min-height: 327;
+}
+
+.buttoncontainer{
+  padding: 0 290px 0 290px;
 }
 
 /* Forms */
@@ -113,6 +119,43 @@ dd {
   clear: both;
   margin: 1em 0 1em 75px;
 }
+.box {
+  border-style: solid;
+  border-color: black;
+  border-width: 5px;
+  text-align: center;
+  font-family:Arial, Helvetica, sans-serif;
+  color: rgb(138, 0, 0);
+  margin: auto 150px auto 150px;
+}
+
+.login-box {
+  background-color: rgb(165, 165, 151);
+  padding: 10px;
+  margin-top: -100px;
+}
+
+.login-button{
+  margin: auto 350px auto 350px;
+}
+
+.login-button a{
+  background-color: rgb(189, 17, 17);
+	color:rgb(255, 255, 255);
+	text-decoration:none;
+	padding:10px 20px;
+  display:block;  
+}
+#wrapper {
+  width: 920px;
+  min-height: 500px;
+  padding: 0 30px;
+}
+	
+			
+.login-button a:hover {
+	background-color:#BC0707;
+}
 
 /* Errors */
 
@@ -127,4 +170,127 @@ dd {
 .errors ul {
   margin-bottom: 0;
   padding-left: 1em;
+}
+
+/* Filter*/
+.column {
+  float: left;
+  display: none; /* Hide columns by default */
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* cssbry menu */
+
+			
+#header {
+  margin:auto;
+  margin-left: auto;
+  margin-right: right;
+	width:460px;
+	font-family:Arial, Helvetica, sans-serif;
+			}
+			
+ul, ol {
+	list-style:none;
+      }
+  
+.navbar-brand.abs
+{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+}
+.nav {
+	width: 600px; /*Le establecemos un ancho*/
+  margin: 0px 0px 10px 0px;
+  
+}
+    
+.nav > li {
+	float:left;
+}
+			
+.nav li a {
+	background-color:#D51111;
+	color:rgb(231, 225, 225);
+	text-decoration:none;
+	padding:10px 20px;
+	display:block;
+		}
+			
+.nav li a:hover {
+	background-color:#BC0707;
+		}
+			
+.nav li ul {
+	display:none;
+	position:absolute;
+  min-width:140px;
+}
+			
+.nav li:hover > ul {
+	display:block;
+			}
+			
+.nav li ul li {
+	position:relative;
+			}
+			
+.nav li ul li ul {
+	right:-140px;
+	top:0px;
+			}
+			
+/* cssbry carrusel */
+#carrusel {
+    float:center;
+    overflow:hidden;
+    height:300px;
+    position:relative;
+    margin-top:0px;
+    margin-bottom:20px;
+}
+ 
+#carrusel .left-arrow {
+    position:absolute;
+    left:5px;
+    z-index:1;
+    top:50%;
+    margin-top:-9px;
+}
+ 
+#carrusel .right-arrow {
+    position:absolute;
+    right:5px;
+    z-index:1;
+    top:50%;
+    margin-top:-9px;
+}
+ 
+.carrusel {
+    width:4000px;
+    left:0px;
+    position:absolute;
+    z-index:0;
+}
+ 
+.carrusel>div {
+    float: left;
+    height: 203px;
+    margin-right: 5px;
+    width: 200px;
+    text-align:center;
+}
+ 
+.carrusel img {
+    cursor:pointer;
+}
+ 
+.product {
+    border:#CCCCCC 2px solid;
 }
