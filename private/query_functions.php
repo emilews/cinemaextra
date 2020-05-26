@@ -110,7 +110,7 @@ function find_user_by_name($name){
 	global $db;
 	
 	$sql = "SELECT * FROM usuarios ";
-	$sql .= "WHERE nam ='" . $name . "'";
+	$sql .= "WHERE nombre_usuario ='" . $name . "'";
 	$result = mysqli_query($db, $sql);
 	confirm_result_set($result);
 	$user = mysqli_fetch_assoc($result);
@@ -121,27 +121,32 @@ function find_user_by_name($name){
 function insert_user($subject){
 	global $db;
 
-	$sql2 = "SELECT * FROM usuarios ORDER BY nam DESC LIMIT 1";
+	$sql2 = "SELECT * FROM usuarios ORDER BY id_usuario DESC LIMIT 1";
 	$result2 = mysqli_query($db, $sql2);
 	confirm_result_set($result2);
 	$latest = mysqli_fetch_assoc($result2);
 	mysqli_free_result($result2);
+	$new_id = intval($latest['id_usuario'])+1;
 
 	$sql = "INSERT INTO usuarios ";
-	$sql .= "(nam, psw)";
+	$sql .= "(id_usuario, nombre_usuario, contraseña, tipo_usuario, imagen) ";
 	$sql .= "VALUES (";
+	$sql .= "'" . strval($new_id) . "',";
 	$sql .= "'" . $subject['nombre_usuario'] . "',";
 	$sql .= "'" . $subject['contraseña'] . "',";
+	$sql .= "'" . $subject['tipo_usuario'] . "',";
+	$sql .= "'" . $subject['imagen'] . "'";
 	$sql .= ")";
 	$result = mysqli_query($db, $sql);
 	
 	if($result) {
-		$user = find_user_by_name($subject['nam']);
+		$user = find_user_by_id($new_id);
 		return $user;
 	} else{
-		
+		echo strval($new_id);
 		echo $subject['nombre_usuario'];
 		echo $subject['contraseña'];
+		echo $subject['tipo_usuario'];
 		echo mysqli_error($db);
 		
 		db_disconnect($db);
@@ -166,7 +171,7 @@ function find_user_by_username($name){
 	global $db;
 	
 	$sql = "SELECT * FROM usuarios ";
-	$sql .= "WHERE nam ='" . $name . "'";
+	$sql .= "WHERE nombre_usuario ='" . $name . "'";
 	$result = mysqli_query($db, $sql);
 	confirm_result_set($result);
 	$subject = mysqli_fetch_assoc($result);
