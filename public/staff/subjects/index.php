@@ -5,7 +5,7 @@
   
 ?>
 
-<?php $page_title = 'Subjects'; ?>
+<?php $page_title = 'Cartelera'; ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 <div id="content">
   <div class="subjects listing">
@@ -18,7 +18,7 @@
     
 
 
-    <div class="listcontent">
+    <div class="listcontent" align="center">
       <div class="buttoncontainer" id="myBtnContainer">
         <button class="btn active" onclick="filterSelection('all')"> Todos</button>
         <button class="btn" onclick="filterSelection('Accion')"> Accion</button>
@@ -52,7 +52,7 @@
                     <?php echo $subject['descripcion']; ?></br>
                     <a class="action" href="<?php echo url_for('/staff/subjects/show.php?id=' . u($subject['id_pelicula'])); ?>">Click para mas información</a></br>
                     <?php
-                      if($_SESSION['user_type']=='admin'){
+                      if($_SESSION['user']=='admin'){
                         echo '<a class="action" href="'. strval(url_for('/staff/subjects/edit.php?id=' . u($subject['id_pelicula']))).'">Edit</a></br>';
                         echo '<a class="action" href="'. strval(url_for('/staff/subjects/delete.php?id=' . u($subject['id_pelicula']))).'">Delete</a></br>';
                       }

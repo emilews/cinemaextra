@@ -13,7 +13,7 @@ if(is_post_request()){
 	  $subject['imagen'] = $_POST['imagen'] ?? '';
   
   $result = insert_subject($subject);
-  //$new_id = mysqli_insert_id($db);
+
   redirect_to(url_for('/staff/subjects/show.php?id='. $result));
 }else{
   redirect_to(url_for('/staff/subjects/new.php'));

@@ -1,5 +1,5 @@
-<footer>
-  &copy; <?php echo date('Y'); ?> Movie Nights Cinema
+<footer class="footer">
+  &copy; <?php echo date('Y'); ?> CinemaExtra
 </footer>
 
 </body>

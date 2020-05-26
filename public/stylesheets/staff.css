@@ -31,12 +31,13 @@ header h1 {
 }
 
 footer {
-  height: 45px;
-  margin: 0 0 10px 0;
-  padding: 10px 20px;
-  background: #D51111;
-  color: #fff;
-  text-align:center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
 }
 
 /* Actions */

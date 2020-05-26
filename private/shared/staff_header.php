@@ -13,7 +13,7 @@
 
 <html lang="en">
   <head>
-    <title>GBI - <?php echo h($page_title); ?></title>
+    <title><?php echo h($page_title); ?></title>
     <meta charset="utf-8">
     <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/staff.css'); ?>" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -53,15 +53,10 @@
     <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
         <ul class="navbar-nav ml-auto">
             <?php
-            if($_SESSION['user_type']=='guest'||$_SESSION['user_type']==''){
+            if($_SESSION['user'] != 'admin'){
                 echo '<li class="nav-item"><a class="nav-link" href="'. strval(url_for('/staff/subjects/login_new.php')).'">Log In</a></li>';
-            }else if($_SESSION['user_type']=='user'){
-                echo '<li class="nav-item"><a class="nav-link" href="'. strval(url_for('/staff/subjects/profile.php')).'">Perfil</a></li>';
-                echo '<li class="nav-item"><a class="nav-link" href="'. strval(url_for('/staff/subjects/logout_page.php')).'">Log Out</a></li>';
-                
-            }else{
-              echo '<li class="nav-item"><a class="nav-link" href="'. strval(url_for('/staff/subjects/profile.php')).'">Perfil</a></li>';
-              echo '<li class="nav-item"><a class="nav-link" href="'. strval(url_for('/staff/subjects/usuarios.php')).'">Usuarios</a></li>';
+            }else if($_SESSION['user']=='admin'){
+              echo '<li class="nav-item"><a class="nav-link" href="'. strval(url_for('/staff/subjects/new.php')).'">Agregar película</a></li>';
               echo '<li class="nav-item"><a class="nav-link" href="'. strval(url_for('/staff/subjects/logout_page.php')).'">Log Out</a></li>';
             }
         ?>
