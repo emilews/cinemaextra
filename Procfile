@@ -1,1 +1,1 @@
-web: vendor/bin/heroku-php-apache2 public/staff/subjects/inicio.php
+web: vendor/bin/heroku-php-apache2 public/staff/subjects/
