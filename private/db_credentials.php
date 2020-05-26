@@ -1,8 +1,8 @@
 
 <?php
-define("DB_SERVER", "localhost");
-define("DB_USER", "root");
-define("DB_PASS", "");
-define("DB_NAME", "CinemaExtra");
+define("DB_SERVER", "un0jueuv2mam78uv.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306");
+define("DB_USER", "mjwdqfltryk24ktx");
+define("DB_PASS", "vhsxjkgwfbongaht");
+define("DB_NAME", "aw2lp7scplr53u6c");
 ?>
 
